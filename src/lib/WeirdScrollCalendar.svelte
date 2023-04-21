@@ -1,14 +1,18 @@
 <script>
-  import icon from "./icons/linebot.svg";
-  import image from "./images/linebot2.png";
-  let title = "鉄道路線bot";
-  let description = "全国の鉄道路線を、1時間毎にツイートするTwitterのbotです。";
-  let ahref = "https://twitter.com/@jae02546bot";
+  import icon from "./icons/WeirdScrollCalendar_icon.png";
+  import image from "./images/WeirdScrollCalendar.png";
+  let title = "変なスクロールカレンダ";
+  let description =
+    "縦横斜めにスクロールするカレンダーです。Google Playよりダウンロード出来ます。";
+  let ahref =
+    "https://play.google.com/store/apps/details?id=io.github.jae02546.WeirdScrollCalendar";
+  let manDescription =
+    "縦横斜めにスクロールするカレンダーです。カレンダーアプリですがスケジュールの表示や登録はできません。スワイプでカレンダーのスクロール、ピンチインアウトで拡大縮小します。横方向ピンチで日付の拡大縮小、縦方向ピンチで1行の曜日数が増減します。アクションバーの[今日]、1回目タップで現状の拡縮状態で今日の日付を画面中心に表示、2回目タップで起動時の表示状態に戻ります。";
 </script>
 
 <div class="main-container">
   <div class="header">
-    <img class="icon" src={icon} alt="siojyake007" />
+    <img class="icon" src={icon} alt={title} />
     <div class="info">
       <div class="title">{title}</div>
       <div class="description">{description}</div>
@@ -19,6 +23,10 @@
   </div>
   <div class="image-container">
     <img class="main-image" src={image} alt={image} />
+  </div>
+
+  <div class="man-description-container">
+    <div class="man-description-text">{manDescription}</div>
   </div>
 </div>
 
@@ -33,7 +41,7 @@
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px; /* 最大幅を指定 */
+    max-width: 800px; /* 最大幅を指定 */
     margin: 0 auto; /* 左右のマージンを自動設定して中央に寄せる */
   }
 
@@ -83,5 +91,21 @@
 
   .image-container {
     margin-top: 1rem;
+  }
+
+  .man-description-container {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .man-description-text {
+    text-align: left;
+  }
+
+  .full-height {
+    width: 100%;
+    height: 90vh; /*100vh*/
+    border: none;
   }
 </style>
