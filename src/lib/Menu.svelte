@@ -58,7 +58,9 @@
 
 <style>
   .menu {
-    min-width: 180px; /* ここを追加 */
+    min-width: 100px;
+    max-width: 150px;
+    background-color: #F0F0F0;
   }
   .menu-list {
     list-style-type: none;

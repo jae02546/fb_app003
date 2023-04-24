@@ -109,21 +109,11 @@
 </main>
 
 <style>
-  /* 以下を追加 */
   main {
     display: flex;
     justify-content: center;
   }
 
-  .button-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center; /* flex-start から変更 */
-    max-width: 1000px; /* 最大幅を指定 */
-  }
-  /* ここまで追加 */
   
   .title {
     font-size: 18px; /* タイトルのフォントサイズを変更 */
@@ -144,7 +134,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: flex-start;
+    justify-content: center; /* flex-start から変更 */
+    max-width: 1000px; /* 最大幅を指定 */
   }
   .button-item {
     display: flex;
