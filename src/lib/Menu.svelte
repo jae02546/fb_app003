@@ -1,6 +1,7 @@
 <!-- Menu.svelte -->
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
+  import iconSiojyake007 from "./icons/siojyake007.png";
   import iconHome from "./icons/home.svg";
   import iconSta from "./icons/sta_search.svg";
   import iconLine from "./icons/line_search.svg";
@@ -21,7 +22,11 @@
     { id: "linebot", icon: iconLinebot, title: "鉄道路線bot" },
     { id: "eki2", icon: iconEki2, title: "駅並べ2.0" },
     { id: "ekiword", icon: iconEkiword, title: "駅word" },
-    { id: "weirdScrollCalendar", icon: iconWeirdScrollCalendar, title: "変なスクロールカレンダ" },
+    {
+      id: "weirdScrollCalendar",
+      icon: iconWeirdScrollCalendar,
+      title: "変なスクロールカレンダ",
+    },
     { id: "about", icon: iconAbout, title: "About" },
   ];
 
@@ -31,6 +36,14 @@
 </script>
 
 <aside class="menu">
+  <header>
+    <div class="header-wrapper">
+      <span class="icon">
+        <img src={iconSiojyake007} alt="jae02546" class="custom-svg-icon" />
+      </span>
+      jae02546
+    </div>
+  </header>
   <ul class="menu-list">
     {#each menuItems as item}
       <li>
@@ -57,10 +70,21 @@
 </aside>
 
 <style>
+  header {
+    background-color: #333;
+  }
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    /* margin: 0; */
+  }
+
   .menu {
     min-width: 100px;
     max-width: 150px;
-    background-color: #F0F0F0;
+    background-color: #f0f0f0;
   }
   .menu-list {
     list-style-type: none;

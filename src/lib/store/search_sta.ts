@@ -9,7 +9,7 @@ export function searchSta(
   itemType: number,
   lenType: number
 ) {
-  console.log("search Parameter:", searchText, matchType, itemType, lenType);
+  console.log("searchSta Parameter:", searchText, matchType, itemType, lenType);
   //searchTextが空文字列でlenType0なら抜ける
   if (searchText == "" && lenType == 0) return;
   //駅mapを検索し条件に合うstaValue配列を作成

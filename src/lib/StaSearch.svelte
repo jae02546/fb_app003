@@ -4,7 +4,7 @@
   import { onMount, onDestroy } from "svelte";
   import { getFsJson } from "./store/firestore";
   import { makeLineMap, makeStaMap } from "./store/make_map";
-  import { searchSta } from "./store/search_map";
+  import { searchSta } from "./store/search_sta";
   import icon from "./icons/sta_search.svg";
   import xmark from "./icons/xmark.svg";
   let title = "駅名検索";

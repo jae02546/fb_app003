@@ -9,7 +9,10 @@ export function makeLineMap(array: { id: string; json: string }[]) {
     if (element.id == "路線") {
       let foo: LineValue[] = JSON.parse(element.json);
       for (const v of foo) {
-        map.set(v.lineNo6, new LineValue(v.lineNo6, v.close, v.name, v.urls));
+        map.set(
+          v.lineNo6,
+          new LineValue(v.lineNo6, v.close, v.name, v.kana, v.urls)
+        );
       }
     }
   });

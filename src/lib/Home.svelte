@@ -54,7 +54,8 @@
       id: "eki2",
       iconSrc: iconEki2,
       title: "駅並べ2.0",
-      description: "全国9000以上の駅を、路線毎に並べるゲームです。Google Playよりダウンロード出来ます。",
+      description:
+        "全国9000以上の駅を、路線毎に並べるゲームです。Google Playよりダウンロード出来ます。",
       imgSrc: imageEki2,
       imgAlt: "駅並べ2.0の画像",
     },
@@ -114,9 +115,8 @@
     justify-content: center;
   }
 
-  
   .title {
-    font-size: 18px; /* タイトルのフォントサイズを変更 */
+    font-size: 18px;
   }
 
   .title-icon-wrapper {
@@ -125,8 +125,8 @@
     gap: 8px;
   }
   .icon {
-    width: 32px; /* アイコンの幅を変更 */
-    height: 32px; /* アイコンの高さを変更 */
+    width: 32px;
+    height: 32px;
   }
 
   .button-container {
@@ -134,8 +134,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: center; /* flex-start から変更 */
-    max-width: 1000px; /* 最大幅を指定 */
+    justify-content: center;
+    align-content: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
   }
   .button-item {
     display: flex;
@@ -160,7 +162,7 @@
     flex-grow: 1;
   }
   .main-image {
-    width: 100%; /* .box img から変更 */
+    width: 100%;
     height: auto;
   }
 </style>
