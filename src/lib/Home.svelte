@@ -34,14 +34,14 @@
       imgSrc: imageLineSearch,
       imgAlt: "路線名検索の画像",
     },
-    {
-      id: "lineList",
-      iconSrc: iconLineList,
-      title: "路線,駅一覧",
-      description: "全国の鉄道路線と駅の一覧です。",
-      imgSrc: imageLineList,
-      imgAlt: "路線,駅一覧の画像",
-    },
+    // {
+    //   id: "lineList",
+    //   iconSrc: iconLineList,
+    //   title: "路線,駅一覧",
+    //   description: "全国の鉄道路線と駅の一覧です。",
+    //   imgSrc: imageLineList,
+    //   imgAlt: "路線,駅一覧の画像",
+    // },
     {
       id: "linebot",
       iconSrc: iconLinebot,
@@ -136,7 +136,7 @@
     gap: 10px;
     justify-content: center;
     align-content: flex-start;
-    max-width: 1000px;
+    /* max-width: 1000px; */
     margin: 0 auto;
   }
   .button-item {

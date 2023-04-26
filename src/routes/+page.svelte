@@ -1,4 +1,4 @@
-<!-- App.svelte -->
+<!-- +page.svelte -->
 <script lang="ts">
   import Menu from "../lib/Menu.svelte";
   import Home from "../lib/Home.svelte";
@@ -17,14 +17,6 @@
     selectedPage = event.detail;
   }
 </script>
-
-<head>
-  <!-- <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css" /> -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
-  />
-</head>
 
 <div class="app-container">
   <Menu on:changepage={handleChangePage} />
@@ -55,6 +47,13 @@
 </div>
 
 <style>
+  /* 追加 */
+  @media (max-width: 767px) {
+    .app-container > Menu {
+      display: none;
+    }
+  }
+
   .app-container {
     display: flex;
   }

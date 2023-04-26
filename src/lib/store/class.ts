@@ -60,7 +60,7 @@ export class StaValue {
   }
 }
 
-//表示Valueクラス
+//駅名検索結果表示Valueクラス
 export class ShowValue {
   //検索結果を表示するmapのvalueに使用、mapのkeyは同一駅No
   //廃駅,駅名,かな,英語,都道府県,駅wiki,路線Arr[]
@@ -93,6 +93,7 @@ export class ShowValue {
   }
 }
 
+//駅名検索結果テーブル表示用
 export class TableValue {
   no: number;
   name: string;
@@ -113,6 +114,44 @@ export class TableValue {
     this.kana = kana;
     this.prefectures = prefectures;
     this.line = line;
+    this.url = url;
+  }
+}
+
+//路線名検索結果表示Valueクラス
+export class LineShowValue {
+  //検索結果を表示するmapのvalueに使用、mapのkeyは路線No6
+  //廃線,路線名,かな,url
+  lineNo6: number;
+  close: boolean;
+  name: string;
+  kana: string;
+  url: string[];
+  constructor(
+    lineNo6: number,
+    close: boolean,
+    name: string,
+    kana: string,
+    url: string[]
+  ) {
+    this.lineNo6 = lineNo6;
+    this.close = close;
+    this.name = name;
+    this.kana = kana;
+    this.url = url;
+  }
+}
+
+//路線名検索結果テーブル表示用
+export class LineTableValue {
+  no: number;
+  name: string;
+  kana: string;
+  url: string;
+  constructor(no: number, name: string, kana: string, url: string) {
+    this.no = no;
+    this.name = name;
+    this.kana = kana;
     this.url = url;
   }
 }

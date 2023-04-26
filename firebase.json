@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "jae02546-home",
     "public": "build",
     "ignore": [
       "firebase.json",

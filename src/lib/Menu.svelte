@@ -18,7 +18,7 @@
     { id: "home", icon: iconHome, title: "Home" },
     { id: "staSearch", icon: iconSta, title: "駅名検索" },
     { id: "lineSearch", icon: iconLine, title: "路線名検索" },
-    { id: "lineList", icon: iconList, title: "路線,駅一覧" },
+    // { id: "lineList", icon: iconList, title: "路線,駅一覧" },
     { id: "linebot", icon: iconLinebot, title: "鉄道路線bot" },
     { id: "eki2", icon: iconEki2, title: "駅並べ2.0" },
     { id: "ekiword", icon: iconEkiword, title: "駅word" },
@@ -82,8 +82,8 @@
   }
 
   .menu {
-    min-width: 100px;
-    max-width: 150px;
+    min-width: 160px;
+    max-width: 320px;
     background-color: #f0f0f0;
   }
   .menu-list {

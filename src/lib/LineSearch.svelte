@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { TableValue } from "./store/class";
+  import { LineTableValue } from "./store/class";
   import { makeAnchorTag, makeInfo } from "./store/tools";
   import { onMount, onDestroy } from "svelte";
   import { getFsJson } from "./store/firestore";
@@ -23,7 +23,7 @@
     // staMap = makeStaMap(fsJson);
   };
 
-  let tableData: TableValue[] = [];
+  let tableData: LineTableValue[] = [];
   let no = 1;
   const search = async () => {
     const startTime = new Date();
@@ -32,26 +32,15 @@
     tableData = [];
     no = 1;
     foo?.forEach((element) => {
-      let line: string = "<br>";
-      let url: string = makeAnchorTag(element.url) + "<br>";
-      element.lvArr.forEach((element2) => {
-        line += element2.name + (element2.close ? "（廃線）" : "") + "<br>";
-        // line +=
-        //   element2.lineNo6 +
-        //   element2.name +
-        //   (element2.close ? "（廃線）" : "") +
-        //   "<br>";
-        element2.urls.forEach((element2) => {
-          url += makeAnchorTag(element2) + "<br>";
-        });
+      let url: string = "";
+      element.url.forEach((element2) => {
+        url += makeAnchorTag(element2) + "<br>";
       });
-      let bar = new TableValue(
+      let bar = new LineTableValue(
         no,
-        element.name + (element.close ? "（廃駅）" : ""),
-        // element.staNo9 + element.name + (element.close ? "（廃駅）" : ""),
+        element.name + (element.close ? "（廃線）" : ""),
+        // element.lineNo6 + element.name + (element.close ? "（廃線）" : ""),
         element.kana,
-        element.prefectures,
-        line,
         url
       );
       tableData.push(bar);
@@ -102,7 +91,6 @@
         }}
       >
         <img class="icon-clear-img" src={xmark} alt="xmark" />
-        <!-- <i class="fas fa-times" /> -->
       </span>
       <button class="button is-primary" on:click={search}>検索</button>
     </div>
@@ -154,10 +142,8 @@
           <thead>
             <tr>
               <th class="has-text-centered">No</th>
-              <th class="has-text-centered">駅名</th>
-              <th class="has-text-centered">かな</th>
-              <th class="has-text-centered">都道府県</th>
               <th class="has-text-centered">路線名</th>
+              <th class="has-text-centered">かな</th>
               <th class="has-text-centered">Wikipedia</th>
             </tr>
           </thead>
@@ -168,8 +154,6 @@
               <td class="is-vcentered">{@html data.no}</td>
               <td class="is-vcentered">{@html data.name}</td>
               <td class="is-vcentered">{@html data.kana}</td>
-              <td class="is-vcentered">{@html data.prefectures}</td>
-              <td class="is-vcentered">{@html data.line}</td>
               <td class="is-vcentered">{@html data.url}</td>
             </tr>
           {/each}
