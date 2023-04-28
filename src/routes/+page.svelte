@@ -12,6 +12,9 @@
   import WeirdScrollCalendar from "$lib/WeirdScrollCalendar.svelte";
   import About from "../lib/About.svelte";
   import iconSiojyake007 from "../lib/icons/siojyake007.png";
+  import { Hamburger } from "svelte-hamburgers";
+  import HamburgerMenu from "../lib/HamburgerMenu.svelte";
+  let open = false;
 
   //表示するページを選択する
   let selectedPage: string = "home";
@@ -19,23 +22,11 @@
     selectedPage = event.detail;
   }
 
-  //ハンバーガーメニューのクリックで表示非表示を切り替えます
-  function toggleMenu(): void {
-    isMenuVisible = !isMenuVisible;
-  }
-
-  // 画面幅が変わったときにメニューの表示状態を更新する
-  let isMenuVisible = true;
-  let isHamburgerMenuVisible = false;
-
-  // $: {
-  //   isHamburgerMenuVisible = window.innerWidth <= 768;
-  // }
-
+  //画面幅でレイアウトを変える
+  let isWide = true;
   onMount(() => {
     const handleResize = () => {
-      isMenuVisible = window.innerWidth > 768;
-      isHamburgerMenuVisible = window.innerWidth <= 768;
+      isWide = window.innerWidth > 768;
     };
 
     window.addEventListener("resize", handleResize);
@@ -47,8 +38,8 @@
   });
 </script>
 
-{#if isMenuVisible}
-  <div class="app-container">
+{#if isWide}
+  <div class="app-container_wide">
     <Menu on:changepage={handleChangePage} />
     <div class="page">
       {#if selectedPage === "home"}
@@ -73,14 +64,9 @@
     </div>
   </div>
 {:else}
-  <div class="app-container2">
+  <div class="app-container_narrow">
     <header>
       <div class="header-wrapper">
-        <div class="hamburger-menu">
-          <span />
-          <span />
-          <span />
-        </div>
         <div class="center-content">
           <span class="icon">
             <img src={iconSiojyake007} alt="jae02546" class="custom-svg-icon" />
@@ -88,6 +74,8 @@
           jae02546
         </div>
       </div>
+      <Hamburger bind:open --color="white" />
+      <HamburgerMenu bind:open on:changepage={handleChangePage} />
     </header>
 
     <div class="page">
@@ -115,11 +103,11 @@
 {/if}
 
 <style>
-  .app-container {
+  .app-container_wide {
     display: flex;
   }
 
-  .app-container2 {
+  .app-container_narrow {
     display: flex;
     flex-direction: column;
   }
@@ -153,17 +141,16 @@
     height: 1em;
     vertical-align: -0.125em;
   }
-  .hamburger-menu {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 24px;
-    height: 24px;
+
+  :global(.svelte-hamburgers.hamburger) {
+    --hamburger-width: 30px;
+    --hamburger-height: 30px;
   }
-  .hamburger-menu span {
-    display: block;
-    height: 3px;
-    background-color: #fff;
-    border-radius: 3px;
+
+  :global(.svelte-hamburgers .hamburger-inner),
+  :global(.svelte-hamburgers .hamburger-inner::before),
+  :global(.svelte-hamburgers .hamburger-inner::after) {
+    width: 30px;
+    height: 4px;
   }
 </style>
