@@ -67,15 +67,22 @@
   <div class="app-container_narrow">
     <header>
       <div class="header-wrapper">
-        <div class="center-content">
-          <span class="icon">
-            <img src={iconSiojyake007} alt="jae02546" class="custom-svg-icon" />
-          </span>
-          jae02546
-        </div>
+        <span class="icon">
+          <img src={iconSiojyake007} alt="jae02546" class="custom-svg-icon" />
+        </span>
+        jae02546
       </div>
-      <Hamburger bind:open --color="white" />
-      <HamburgerMenu bind:open on:changepage={handleChangePage} />
+      <div class="hamburger-wrapper">
+        <Hamburger
+          bind:open
+          --color="white"
+          --padding="0px"
+          --layer-height="2px"
+          --layer-width="20px"
+          --layer-spacing="4px"
+        />
+        <HamburgerMenu bind:open on:changepage={handleChangePage} />
+      </div>
     </header>
 
     <div class="page">
@@ -106,12 +113,10 @@
   .app-container_wide {
     display: flex;
   }
-
   .app-container_narrow {
     display: flex;
     flex-direction: column;
   }
-
   .page {
     flex-grow: 1;
     padding: 0.5rem; /*1rem;*/
@@ -121,17 +126,13 @@
     background-color: #333;
   }
   .header-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0rem 0rem 0rem;
+    /* padding: 0.5rem; */
     color: #fff;
-  }
-  .center-content {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
-    flex-grow: 1;
+    /* flex-grow: 1; */
   }
   .icon {
     margin-right: 0.5rem;
@@ -139,18 +140,14 @@
   .custom-svg-icon {
     width: 1em;
     height: 1em;
-    vertical-align: -0.125em;
+    /* vertical-align: -0.125em; */
   }
 
-  :global(.svelte-hamburgers.hamburger) {
-    --hamburger-width: 30px;
-    --hamburger-height: 30px;
-  }
-
-  :global(.svelte-hamburgers .hamburger-inner),
-  :global(.svelte-hamburgers .hamburger-inner::before),
-  :global(.svelte-hamburgers .hamburger-inner::after) {
-    width: 30px;
-    height: 4px;
+  .hamburger-wrapper {
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    padding: 0rem 0rem 0.5rem 0.5rem;
+    /* color: #fff; */
   }
 </style>

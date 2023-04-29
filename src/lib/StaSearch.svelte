@@ -212,6 +212,17 @@
       </table>
     </ul>
   </form>
+
+  <form class="box is-size-7">
+    <div class="content has-text-left">
+      駅名検索 ver.2.2 (c)2023 jae02546<br />
+      <a
+        href="https://jae02546.github.io/station_search/"
+        target="_blank"
+        rel="noopener noreferrer">路線データ、及び免責事項について</a
+      >
+    </div>
+  </form>
 </div>
 
 <style>
