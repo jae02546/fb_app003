@@ -3,7 +3,7 @@
   import image from "./images/eki2.png";
   let title = "駅並べ2.0";
   let description =
-    "北海道から九州・沖縄まで、全国に9000以上ある駅を路線毎に並べるゲームです。Google Playよりダウンロード出来ます。";
+    "全国9000以上の駅を、路線図順に並べるゲームです。Google Playよりダウンロード出来ます。";
   let ahref =
     "https://play.google.com/store/apps/details?id=io.github.jae02546.ekinarabe2";
   let manUrl = "https://jae02546.github.io/ekinarabe2/";

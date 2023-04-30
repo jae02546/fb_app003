@@ -10,7 +10,7 @@ import iconEkiword from "./icons/ekiword.svg";
 import iconWeirdScrollCalendar from "./icons/WeirdScrollCalendar_icon.png";
 
 import imageStaSearch from "./images/sta_search.png";
-import imageLineSearch from "./images/sta_search.png";
+import imageLineSearch from "./images/line_search.png";
 import imageLineList from "./images/sta_search.png";
 import imageLinebot from "./images/linebot.png";
 import imageEki2 from "./images/eki2.png";
@@ -18,19 +18,40 @@ import imageEkiword from "./images/ekiword.png";
 import imageWeirdScrollCalendar from "./images/WeirdScrollCalendar.png";
 
 export const menuItems = [
-  { id: "home", icon: iconHome, title: "Home" },
-  { id: "staSearch", icon: iconStaSearch, title: "駅名検索" },
-  { id: "lineSearch", icon: iconLineSearch, title: "路線名検索" },
-  { id: "lineList", icon: iconLineList, title: "路線,駅一覧" },
-  { id: "linebot", icon: iconLinebot, title: "鉄道路線bot" },
-  { id: "eki2", icon: iconEki2, title: "駅並べ2.0" },
-  { id: "ekiword", icon: iconEkiword, title: "駅word" },
+  { id: "home", icon: iconHome, title: "Home", path: "/" },
+  {
+    id: "staSearch",
+    icon: iconStaSearch,
+    title: "駅名検索",
+    path: "/staSearch",
+  },
+  {
+    id: "lineSearch",
+    icon: iconLineSearch,
+    title: "路線名検索",
+    path: "/lineSearch",
+  },
+  // {
+  //   id: "lineList",
+  //   icon: iconLineList,
+  //   title: "路線,駅一覧",
+  //   path: "/lineList",
+  // },
+  {
+    id: "linebot",
+    icon: iconLinebot,
+    title: "鉄道路線bot",
+    path: "/linebot",
+  },
+  { id: "eki2", icon: iconEki2, title: "駅並べ2.0", path: "/eki2" },
+  { id: "ekiword", icon: iconEkiword, title: "駅word", path: "/ekiword" },
   {
     id: "weirdScrollCalendar",
     icon: iconWeirdScrollCalendar,
     title: "変なスクロールカレンダ",
+    path: "/weirdScrollCalendar",
   },
-  { id: "about", icon: iconAbout, title: "About" },
+  { id: "about", icon: iconAbout, title: "About", path: "/about" },
 ];
 
 export const homeItems = [
@@ -38,7 +59,8 @@ export const homeItems = [
     id: "staSearch",
     iconSrc: iconStaSearch,
     title: "駅名検索",
-    description: "全国の9000以上の駅名を検索できます。検索方法は、部分一致、前方一致、後方一致、完全一致から選択。駅名または駅名のふりがなで検索。文字数の指定も可能。",
+    description:
+      "全国9000以上の駅名を検索できます。検索方法は、部分一致、前方一致、後方一致、完全一致から選択。駅名または駅名のふりがなで検索。文字数の指定も可能。",
     imgSrc: imageStaSearch,
     imgAlt: "駅名検索の画像",
   },
@@ -46,18 +68,20 @@ export const homeItems = [
     id: "lineSearch",
     iconSrc: iconLineSearch,
     title: "路線名検索 β版",
-    description: "全国の路線名を検索できます。「駅並べ2.0」のデータを流用しているため、同じ路線名が複数表示される場合があります。（改修中）",
+    description:
+      "全国の路線名を検索できます。「駅並べ2.0」のデータを流用しているため、同じ路線名が複数表示される場合があります。（改修中）",
     imgSrc: imageLineSearch,
     imgAlt: "路線名検索の画像",
   },
-  {
-    id: "lineList",
-    iconSrc: iconLineList,
-    title: "路線,駅一覧",
-    description: "全国の鉄道路線と駅の一覧です。",
-    imgSrc: imageLineList,
-    imgAlt: "路線,駅一覧の画像",
-  },
+  // {
+  //   id: "lineList",
+  //   iconSrc: iconLineList,
+  //   title: "路線,駅一覧",
+  //   description:
+  //     "駅名検索の元データです。間違い等あるかもしれませんが、ご了承ください。",
+  //   imgSrc: imageLineList,
+  //   imgAlt: "路線,駅一覧の画像",
+  // },
   {
     id: "linebot",
     iconSrc: iconLinebot,
@@ -71,7 +95,7 @@ export const homeItems = [
     iconSrc: iconEki2,
     title: "駅並べ2.0",
     description:
-      "全国9000以上の駅を、路線毎に並べるゲームです。Google Playよりダウンロード出来ます。",
+      "全国9000以上の駅を、路線図順に並べるゲームです。Google Playよりダウンロード出来ます。",
     imgSrc: imageEki2,
     imgAlt: "駅並べ2.0の画像",
   },

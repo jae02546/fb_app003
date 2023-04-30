@@ -7,7 +7,7 @@
   import { searchLine } from "./store/search_line";
   import icon from "./icons/line_search.svg";
   import xmark from "./icons/xmark.svg";
-  let title = "路線名検索";
+  let title = "路線名検索 β版";
   let lineMap = new Map(); //路線データmap
   let searchText = ""; //検索文字列
   let matchType = 1; //検索方法
@@ -160,6 +160,17 @@
         </tbody>
       </table>
     </ul>
+  </form>
+
+  <form class="box is-size-7">
+    <div class="content has-text-left">
+      路線名検索 ver.0.1 (c)2023 jae02546<br />
+      <a
+        href="https://jae02546.github.io/station_search/"
+        target="_blank"
+        rel="noopener noreferrer">路線データ、及び免責事項について</a
+      >
+    </div>
   </form>
 </div>
 
