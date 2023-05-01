@@ -69,7 +69,7 @@ export const homeItems = [
     iconSrc: iconLineSearch,
     title: "路線名検索 β版",
     description:
-      "全国の路線名を検索できます。「駅並べ2.0」のデータを流用しているため、同じ路線名が複数表示される場合があります。（改修中）",
+      "全国の路線名を検索できます。駅並べ2.0のデータ流用のため、同じ路線名が複数表示される場合があります。今のところ愛称等での検索はできません。（改修中）",
     imgSrc: imageLineSearch,
     imgAlt: "路線名検索の画像",
   },

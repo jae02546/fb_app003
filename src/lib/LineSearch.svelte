@@ -128,7 +128,7 @@
     <div class="field is-flex is-align-items-center">
       <label class="custom-label mr-3" for="len-select">検索項目</label>
       <div class="control mr-3">
-        <input type="radio" bind:group={itemType} name="item" value={1} />駅名
+        <input type="radio" bind:group={itemType} name="item" value={1} />路線名
         <input type="radio" bind:group={itemType} name="item" value={2} />かな
       </div>
     </div>
